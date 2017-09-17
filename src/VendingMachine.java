@@ -3,4 +3,7 @@
  * Email: chasestruse@gmail.com
  */
 public class VendingMachine {
+    public float makeChange(float inputFloat) {
+        return inputFloat;
+    }
 }
