@@ -9,12 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class VendingMachineTest {
 
+    VendingMachine vendingMachine = new VendingMachine();
+    /*
     @Test
     public void whenMakeChangeIsPassedAFloatItReturnThatFloat(){
-        VendingMachine vendingMachine = new VendingMachine();
-
         float inputNumber = 1.0f;
-        assertEquals(1.0f, vendingMachine.makeChange(inputNumber));
+        assertEquals(1.0f, vendingMachine.makeChange());
+    }
+    */
+    @Test
+    public void whenMakeChangeIsPassedANameOfACoinItAddsThatCoinsValueToAFloat(){
+        String quarter = "Quarter";
+        assertEquals(0.25f, vendingMachine.makeChange(quarter));
     }
 
 }
