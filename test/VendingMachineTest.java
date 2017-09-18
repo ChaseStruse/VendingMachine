@@ -13,6 +13,8 @@ public class VendingMachineTest {
 
     public String dollar = "Dollar";
     public String quarter = "Quarter";
+    public String nickel = "Nickel";
+    public String penny = "Penny";
     public float total = 1.25f;
     /*
     @Test
