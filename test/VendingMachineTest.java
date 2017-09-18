@@ -10,6 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VendingMachineTest {
 
     VendingMachine vendingMachine = new VendingMachine();
+
+    public String dollar = "Dollar";
+    public String quarter = "Quarter";
+    public float total = 1.25f;
     /*
     @Test
     public void whenMakeChangeIsPassedAFloatItReturnThatFloat(){
@@ -19,14 +23,21 @@ public class VendingMachineTest {
     */
     @Test
     public void whenMakeChangeIsPassedANameOfACoinItAddsThatCoinsValueToAFloat(){
-        String quarter = "Quarter";
         assertEquals(0.25f, vendingMachine.makeChange(quarter, 0.50f));
     }
     @Test
     public void whenMakeChangeIsPassedATotalItReturnsTheTotalMinusTheChangePutIn(){
-        String quarter = "Quarter";
-        float total = 1.25f;
         assertEquals(1.0f, vendingMachine.makeChange(quarter, total));
+    }
+
+    @Test
+    public void makeChangeWillReturnTheNameOfTheCoinsForTheChange(){
+        assertEquals("Amount of change: Total Quarters: 4", vendingMachine.makeChange(quarter,total));
+    }
+
+    @Test
+    public void makeChangeCanDifferentiateBetweenQuartersDimesAndNickels(){
+        assertEquals("Amount of change: Total Quarters: 1 Total Dimes: 1 Total Nickels: 1", vendingMachine.makeChange("Dollar", .55f));
     }
 
 }
