@@ -15,6 +15,7 @@ public class VendingMachine {
     int amountOfQuarters = 0;
     int amountOfDimes = 0;
     int amountOfNickels = 0;
+    int amountOfPennies = 0;
 
     boolean isGreaterThanZero = false;
 
@@ -32,6 +33,7 @@ public class VendingMachine {
             totalMoneyPutIntoMachine += 0.05f;
         }else if(inputString.equalsIgnoreCase("Penny")){
             totalMoneyPutIntoMachine += 0.00f;
+            amountOfPennies++;
         }else{
             totalMoneyPutIntoMachine += 0.0f;
         }
@@ -54,6 +56,6 @@ public class VendingMachine {
         }
 
 
-        return ("Amount of change: " + "Total Quarters: " + amountOfQuarters + " Total Dimes: " + amountOfDimes + " Total Nickels: " + amountOfNickels);
+        return ("Amount of change: " + "Total Quarters: " + amountOfQuarters + " Total Dimes: " + amountOfDimes + " Total Nickels: " + amountOfNickels + " Amount in change tray: " + amountOfPennies + " pennies");
     }
 }

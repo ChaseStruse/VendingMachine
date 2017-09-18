@@ -42,4 +42,8 @@ public class VendingMachineTest {
         assertEquals("Amount of change: Total Quarters: 1 Total Dimes: 1 Total Nickels: 1", vendingMachine.makeChange("Dollar", .55f));
     }
 
+    @Test
+    public void makeChangeDoesNotIncludePennies(){
+        assertEquals("Amount of change: Total Quarters: 0 Total Dimes: 0 Total Nickels: 0 Amount in change tray: 1 pennies", vendingMachine.makeChange("Penny", .55f));
+    }
 }
